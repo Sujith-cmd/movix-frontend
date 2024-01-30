@@ -1,0 +1,220 @@
+@import "../../../mixins.scss";
+.pageHeader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 45%;
+    margin-top: 2%;
+    
+
+}
+.pageTitle{
+    
+    width: 6rem;
+    
+   
+}
+.map{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: #b15f1b;
+    height: 40px;
+}
+.bar{
+    height: 5px;
+
+    width: 100%;
+    // background-color: rgb(255, 254, 253);
+}
+.slno{
+width: 3rem;
+display: flex;
+justify-content: center;
+}
+.username{
+    width: 8rem;
+    display: flex;
+    justify-content: center;
+}
+.email{
+    width: 15rem;
+    display: flex;
+    justify-content: center;}
+.edit{
+    width: 5rem;
+    display: flex;
+    justify-content: center;
+}
+.signout{
+    width: 90%;
+    display: flex;
+    justify-content: end;
+
+}
+.app{
+    display: flex;
+    flex-direction: column;
+    width: 78.75vw;
+    position: relative;
+    // height: 100vh;
+    // background-color: aqua;
+    .modal{
+        height: 30px;
+        background-color: rgb(12, 12, 39);
+        position: absolute;
+        top: 24.6%;
+        left: 23.7%;
+        // right: 100px;
+        width: 74.7%;
+        height:64.5%;
+        overflow-y: scroll;
+        overflow-x: scroll;
+    }
+
+}
+
+.appHeader{
+height: 70px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 4px;
+border: 1px solid rgba(243, 234, 234, 0.15);
+background-color: rgba(8, 3, 29, 0.266);
+
+}
+.appFooter{
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+.sideMenu{
+width: 20%;
+background-color: rgba(8, 3, 29, 0.266);;
+display: flex;
+flex-direction: column;
+justify-content: center;
+gap: 3rem;
+max-height: 100%;
+border: 1px solid rgba(243, 234, 234, 0.15);
+color: antiquewhite;
+font-size: large;
+}
+.pageContent{
+    width: 80%;
+    // background-color: #7c0f0f;
+    // max-height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: scroll;
+}
+.sideMenuAndPageContent{
+    display: flex;
+    flex: 1;
+    gap: 2rem;
+    max-height:90vh ;
+    overflow-y: scroll;
+}
+
+.dashboardWrapper{
+
+    width: auto;
+    height: auto;
+    // background-color: aqua;
+    display: flex;
+}
+
+.prevContainer{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+    .prevHeadings{
+      height: 55px;
+      background-color: rgb(168, 71, 7);
+      display: flex;
+      border-color: aliceblue;
+      border-style: double;
+      justify-content: space-between;
+      .prevHead{
+        text-align: center;
+        align-self: center;
+        width: 16%;
+        color: white;
+      }
+    }
+    .prevBody{
+        display: flex;
+        justify-content: space-between;
+        margin-top: .5rem;
+        height: 50px;
+        margin-bottom: 0.5rem;
+        // background-color: aqua;
+      .prevValue{
+        width: 16%;
+        align-self: center;
+        text-align: center;
+        border-color: rgb(247, 143, 8);
+        border-style: groove;
+        padding: 1rem;
+        color: rgb(254, 250, 247);
+        overflow: hidden;
+
+      }
+    }
+
+
+
+.mainSection{
+    display: flex;
+    // height: 560px;
+    
+}
+
+    .form{
+        display: flex;
+        // flex-direction: column;
+        // background-color: blue;
+        gap: 12px;
+        width: 100%;
+        padding-top: 100px;
+        // height: 1000px;
+        // background-color: aqua;
+        .layer{
+            display: flex;
+            align-items: center;
+            width: 50%;
+            // height: 30px;
+            gap: .5rem;
+            .formInput{
+             width: 100%;
+             height: 30px;
+             border-radius: 15px;
+             padding-left: 1rem;
+            }
+            .labelInput{
+              color: bisque;
+              width: 100%;
+            }
+        }
+        .formButton{
+            background-color: rgb(9, 21, 21); 
+            color: white;
+            padding: 0.75rem;
+            width: 9rem;
+            border-radius: 2rem;
+            border-style: ridge;
+            margin-top: 2rem;
+             
+        }
+    }
+    
+    
