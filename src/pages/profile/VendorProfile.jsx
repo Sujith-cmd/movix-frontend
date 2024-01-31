@@ -358,7 +358,7 @@ uploadTask.on('state_changed',
     try {
       const result = confirm('Do you want to signout?');
       if (result) {
-  const res= await fetch('http://localhost:5000/api/vendors/signout')
+  const res= await fetch('https://movix.jith.shop/api/vendors/signout')
         let data=await res.json();
         dispatch(signout())
         console.log(data);

@@ -15,7 +15,7 @@ try {
    const auth=getAuth(app)
    const result= await signInWithPopup(auth,provider)
    console.log(result);
-   axios.post("http://localhost:5000/api/users/google", {
+   axios.post("https://movix.jith.shop/api/users/google", {
     username:result.user.displayName,
     email:result.user.email,
     displayPicture:result.user.photoURL

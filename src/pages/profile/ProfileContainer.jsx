@@ -25,7 +25,7 @@ export default function Profile({currentUser}) {
     e.preventDefault()
     dispatch(updateUserStart())
     try {
-      axios.post(`http://localhost:5000/api/vendors/update/${currentUser._id}`, {
+      axios.post(`https://movix.jith.shop/api/vendors/update/${currentUser._id}`, {
         ...formData
       })
       .then(response=> {
@@ -50,7 +50,7 @@ export default function Profile({currentUser}) {
   const handleDeleteAccount = async () => {
     try {
       dispatch(deleteUserStart());
-      axios.delete(`http://localhost:5000/api/users/delete/${currentUser._id}`)
+      axios.delete(`https://movix.jith.shop/api/users/delete/${currentUser._id}`)
       .then(response=> {
      
        console.log(response.data.rest,response.status,response.statusText);
@@ -73,7 +73,7 @@ export default function Profile({currentUser}) {
   };
   const handleSignOut = async () => {
     try {
-      axios.get(`http://localhost:5000/api/users/signout`)
+      axios.get(`https://movix.jith.shop/api/users/signout`)
       dispatch(signOut())
     } catch (error) {
       console.log(error);

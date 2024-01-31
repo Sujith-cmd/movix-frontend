@@ -259,7 +259,7 @@ const AdminHome = () => {
   }
     const handleSignOut = async () => {
         try {
-            const res= await fetch('http://localhost:5000/api/admin/signout')
+            const res= await fetch('https://movix.jith.shop/api/admin/signout')
                   let data=await res.json();
                   console.log(data);
           dispatch(signout())
@@ -574,7 +574,7 @@ const vendorsCalling =  (status) => {
   const editUserModal = async (id) => {
     setUserModalDiv(true)
     try {
-          const res= await fetch(`http://localhost:5000/api/users/${id}`,{
+          const res= await fetch(`https://movix.jith.shop/api/users/${id}`,{
             method: 'GET',
             headers:{
               'Content-Type': 'application/json',
@@ -627,7 +627,7 @@ const vendorsCalling =  (status) => {
   const blockTheatre = async () => {
     axios({
       method: 'POST',
-      url: `http://localhost:5000/api/vendors/putAllow`,
+      url: `https://movix.jith.shop/api/vendors/putAllow`,
       headers: {}, 
       data: {
        id:disAll

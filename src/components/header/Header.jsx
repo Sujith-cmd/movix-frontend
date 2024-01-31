@@ -84,7 +84,7 @@ const Header = () => {
             
         }
         try {
-            const res= await fetch(`http://localhost:5000/api/vendors/explore/theatre`,{
+            const res= await fetch(`https://movix.jith.shop/api/vendors/explore/theatre`,{
     method: 'GET',
     headers:{
       'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ const Header = () => {
       let allData=await res.json();
     //   console.log(allData);
       dispatch(getTheatres(allData))
-      const resp= await fetch(`http://localhost:5000/api/vendors/explore/game`,{
+      const resp= await fetch(`https://movix.jith.shop/api/vendors/explore/game`,{
     method: 'GET',
     headers:{
       'Content-Type': 'application/json',

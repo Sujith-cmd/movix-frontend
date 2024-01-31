@@ -21,10 +21,10 @@ export const fetchDataFromApi = async (url, params) => {
     }
 };
 export const axiosIn = axios.create({
-    baseURL: "http://localhost:5000/api" 
+    baseURL: "https://movix.jith.shop/api" 
   });
   export const axiosInTok = axios.create({
-    baseURL: "http://localhost:5000/api",
+    baseURL: "https://movix.jith.shop/api",
     // Set default headers
     // headers: {
     //     'Authorization': `Bearer ${token}` // Assuming it's a Bearer token
