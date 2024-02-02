@@ -114,18 +114,27 @@ const VendorSignin = () => {
     try {
       axiosIn.post("/vendors/signin",formData).then((response) => {
         // console.log("vendor login route");
-        // console.log(response);
-        
-        dispatch(setCurrentUser(response.data.rest))
-            dispatch(setVendorLogin())
-            dispatch(setToken(response.data.token))
-         
-            navigate('/profile')
+        console.log(response);
+        if(response.status==401){
+          alert("user is blocked")
+        }else{
+
+          dispatch(setCurrentUser(response.data.rest))
+              dispatch(setVendorLogin())
+              dispatch(setToken(response.data.token))
+           
+              navigate('/profile')
+        }
       
      }).catch((err)=>{
        console.log("logggin errorrr");
        console.log(err);
-       toast("wrong credentials")
+       if(err.response.status==401){
+        alert("user is blocked")
+      }
+       toast("user is blocked")
+      // alert("user is blocked")
+
      })
       // const res= await fetch('http://localhost:5000/api/vendors/signin',{
       //   method: 'POST',
