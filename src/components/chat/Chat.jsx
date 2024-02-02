@@ -60,7 +60,7 @@ const Chat = () => {
         }, [sendMessage]) 
 
     useEffect(() => {
-        socket.current= io('http://localhost:8800');
+        socket.current= io('https://movix.jith.shop');
         
          socket.current.emit("new-user-add",currentUser._id)
          socket.current.on('get-users',(users)=>{
