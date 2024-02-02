@@ -10,6 +10,8 @@ import {getDownloadURL, getStorage, ref, uploadBytesResumable} from 'firebase/st
 import  {app}  from '../../firebase.js';
 import { getBasic, getFacilities, getSlots, getChats } from '../../store/vendorSlice.js';
 import {  } from '../../store/vendorSlice.js';
+import BookingsDetails from "../../components/bookingDetails/BookingDetails.jsx"
+
 import noImg from "../../assets/no-facility.png"
 import Select from 'react-select';
 import Chat from '../../components/chat/Chat.jsx';
