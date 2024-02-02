@@ -209,6 +209,15 @@ const  UserSignin = () => {
           navigate('/')
 
         }
+        if(response.status==401){
+          // dispatch(setCurrentUser(response.data.rest))
+          // dispatch(setViewerLogin())
+          // dispatch(setToken(response.data.token))
+        
+          // navigate('/')
+          toast("access blocked")
+
+        }
         // if(response.status==400){}
       }).catch((err)=>{
         console.log("logggin errorrr");
