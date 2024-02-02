@@ -3,12 +3,11 @@ import React, { useState, useEffect } from "react";
 import "./styles.scss"
 import { useSelector } from "react-redux";
 
-const BookingDetails = ({BookingDetails,setDetails,setDetailsValue}) => {
+const BookingDetails = ({setDetails,setDetailsValue}) => {
   
 
   const { bookingDetails } = useSelector((state) => state.home);
-  console.log("boooookingDetails");
-  console.log(BookingDetails);
+
 
 
    //,marginBottom:"1rem"
