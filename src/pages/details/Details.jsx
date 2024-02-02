@@ -492,9 +492,9 @@ const Details = () => {
         const result = stripe.redirectToCheckout({
           sessionId:session.id
         })
-        console.log("result");
-        console.log(result);
-        alert(result);
+        // console.log("result");
+        // console.log(result);
+        // alert(result);
     //    const response = await fetch("http://localhost:5000/api/users/checkout-session",{
     //   method:"POST",
     //   headers:headers,
