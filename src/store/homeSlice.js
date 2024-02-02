@@ -12,7 +12,8 @@ const initialState= {
     viewer:false,
     distributor:false,
     loadingState:false,
-    errorState:false
+    errorState:false,
+    bookingDetails:{}
 }
  const homeSlice = createSlice({
     name: "home",
@@ -70,12 +71,16 @@ const initialState= {
             state.admin = false;
             state.viewer=true
         },
+        setBookingDetails:(state,action)=> {
+            state.bookingDetails = action.payload;
+           
+        },
     }
     }
 );   
 
 
-export const { getApiConfiguration, getGenres,setToken,setCurrentData,setCurrentUser ,loading,finishLoading,error,finishError,signout,setAdminLogin,setVendorLogin,setViewerLogin } = homeSlice.actions;
+export const { getApiConfiguration, getGenres,setToken,setCurrentData,setCurrentUser ,loading,finishLoading,error,finishError,signout,setAdminLogin,setVendorLogin,setViewerLogin,setBookingDetails } = homeSlice.actions;
 
 export default homeSlice.reducer;
 

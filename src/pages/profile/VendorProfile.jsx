@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useRef, useState } from 'react';
-import { setCurrentUser, signout } from "../../store/homeSlice.js";
+import { setCurrentUser, signout,setBookingDetails } from "../../store/homeSlice.js";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import ContentWrapper from '../../components/contentWrapper/ContentWrapper.jsx';
@@ -22,9 +22,12 @@ import ReactPaginate from "react-paginate";
 
 
 export default function Profile() {
-  const { currentUser } = useSelector((state) => state.home);
+  const { currentUser,bookingDetails } = useSelector((state) => state.home);
   const [formData, setFormData] = useState({})
   const [error,setError]=useState(false)
+  const [bookingDet, setBookingDet] = useState(false)
+  const [bookingDetValues, setBookingDetValues] = useState({})
+
   const [username,setUsername ]=useState(currentUser.username)
   const [thumbnailPic, setThumbnailPic]=useState(currentUser.thumbnailPic)
   const [displayPicture, setDisplayPicture]=useState(currentUser.displayPicture)
@@ -80,7 +83,9 @@ export default function Profile() {
     setPageNumber(selected);
   };
 const pageCount = Math.ceil(currentUser?.bookings?.length / bookingsPerPage );
-
+useEffect(() => {
+  dispatch(setBookingDetails({...bookingDetValues}))
+}, [bookingDetValues])
 useEffect(() => {
   dispatch(getBasic())
 }, [])
@@ -605,6 +610,7 @@ const targDate=new Date(currentUser.subscription)
 // console.log(currDate-targDate);
 if(currDate-targDate>0){
   setAccess(false)
+  toast("Get Subscription for Listing your Theatre")
 }else{
   setAccess(true)
 }
@@ -690,6 +696,8 @@ useEffect(() => {
 },[changed])
   return (   
       <div className='updateMain'>
+                           {bookingDet?<BookingsDetails setDetails={setBookingDet} setDetailsValue={setBookingDetValues}/>:""}
+
          <ToastContainer />
          <div style={{marginTop:"-50px",display:"flex",justifyContent:"end",paddingRight:"10%"}}>
            <span style={{color:"white",backgroundColor:"grey",padding:"1rem",borderRadius:".5rem",cursor:"pointer"}} onClick={()=>setPrevBooking(true)}>Bookings</span>
@@ -700,12 +708,12 @@ useEffect(() => {
                   <span style={{padding:"1rem",backgroundColor:"white",borderRadius:".75REM",cursor:"pointer"}} onClick={()=>setPrevBooking(false)}>close</span>
                 </div>
           <div className='prevContainer'>
-            <div className='prevHeadings' style={{paddingBottom:".75rem",paddingTop:".75rem",justifyContent:"CENTER"}}>
+          <div className='prevHeadings' style={{paddingBottom:".75rem",paddingTop:".75rem"}}>
                 <div className='prevHead'>Date</div>
                 <div className='prevHead'>Username</div>
                 <div className='prevHead'>Booking Slots</div>
                 <div className='prevHead'>Bill</div>
-                <div className='prevHead'>Booking Id</div>
+               
                 <div className='prevHead'>Status</div>
                 {/* <div className='prevHead'>hjj</div> */}
                 
@@ -742,24 +750,15 @@ useEffect(() => {
                             <div className='prevValue'>{book.username}</div>
                             <div className='prevValue'>{times}</div>
                             <div className='prevValue'>{book.bill}</div>
-                            <div className='prevValue'>{book.bookingId}</div>
-                            <div className='prevValue'>{book.status}</div>
+                          
+                            <div className='prevValue'><span>{book.status}</span><span style={{backgroundColor:"gray",marginLeft:"10px",fontSize:"15px",paddingLeft:"5px",paddingRight:"5px"}} onClick={()=>{setBookingDet(true);setBookingDetValues({...book})}}>Details</span></div>
                             {/* <div className='prevValue' >status</div> */}
                             {/* <div className='prevValue' >cg v</div> */}
                             {/* <div className='prevValue' >{canc?"Cancel":"No refund"}</div> */}
                            
                             {/* <div className='prevValue'>hjj</div> */}
                             </div>
-                            <div style={{display:"flex"}}>{book?.bookedEatings?.map((eat,index)=>{
-                              return(
-                                <div style={{display:"flex",gap:"1rem"}} key={index}>
-
-                                  <div style={{color:"white"}}>Item :{eat.item}</div>
-                                  <div style={{color:"white"}}>Qnty :{eat.quantity}</div>
-                                  <div style={{color:"white"}}>Price :{eat.price}</div>
-                                </div>
-                              )
-                            })}</div>
+                           
                         </div>
                         )
                     })
