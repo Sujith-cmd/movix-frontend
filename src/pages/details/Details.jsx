@@ -79,6 +79,11 @@ const Details = () => {
         if(vendorDat?.timeSlots?.length==0){
           alert("Current theatre doesn't have any available time.Please choose any other")
         }
+        if(vendorDat.isTheatre==true){
+          setType("theatre")
+        }else{
+          setType("Game")
+        }
        },[vendorDat])
      
        const nextFacility=async()=>{
@@ -797,7 +802,7 @@ const Details = () => {
           </div>):("")}
             <div style={{display:"flex",justifyContent:"flex-end"}}>
 
-            <button style={{fontWeight:"600",borderRadius:"15px",borderStyle:"none",justifySelf:"center",width:"150px",height:"30px"}} type="botton" onClick={launchChat}>Chat</button>
+            <button style={{fontWeight:"600",borderRadius:"15px",borderStyle:"none",justifySelf:"center",width:"150px",height:"30px",cursor:"pointer"}} type="botton" onClick={launchChat}>Chat</button>
             </div>
           </ContentWrapper>
         
