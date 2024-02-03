@@ -419,7 +419,7 @@ const Details = () => {
 
   }
   if(seatsNeeded>vendorData?.seatingCapacity){
-    return alert(`maximum available seats is ${currentUser?.seatingCapacity}`)
+    return alert(`maximum available seats is ${vendorData?.seatingCapacity}`)
   }
   if(currentUser.Role!==0){
     return alert("only users can book theatres/game stations")
@@ -467,7 +467,7 @@ const Details = () => {
 
     
     if(seatsNeeded>vendorData?.seatingCapacity){
-      return alert(`maximum available seats is ${currentUser?.seatingCapacity}`)
+      return alert(`maximum available seats is ${vendorData?.seatingCapacity}`)
     }
     else{
 
