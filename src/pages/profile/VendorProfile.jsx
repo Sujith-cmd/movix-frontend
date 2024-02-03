@@ -620,14 +620,14 @@ const tS = (currentUser.timeSlots || []).map((i) => String(i)).join(" ");
 setValidTimes([...tS])
 
 }, [currentUser])
-useEffect(() => {
-  if(currentUser?.isAccess=="Allowed"){
-    // setAccess(false)
-  }else{
-    // setAccess(true)
-    toast("Get Subscription for Listing your Theatre")
-  }
-}, [])
+// useEffect(() => {
+//   if(currentUser?.isAccess=="Allowed"){
+//     // setAccess(false)
+//   }else{
+//     // setAccess(true)
+//     toast("Get Subscription for Listing your Theatre")
+//   }
+// }, [])
 
 const makePayment = async () =>{
   if(subAmt>0){
