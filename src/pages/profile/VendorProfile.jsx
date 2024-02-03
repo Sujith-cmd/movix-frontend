@@ -622,14 +622,7 @@ if(currentUser?._id!==undefined){
 }
 
 }, [currentUser])
-// useEffect(() => {
-//   if(currentUser?.isAccess=="Allowed"){
-//     // setAccess(false)
-//   }else{
-//     // setAccess(true)
-//     toast("Get Subscription for Listing your Theatre")
-//   }
-// }, [])
+
 
 const makePayment = async () =>{
   if(subAmt>0){
