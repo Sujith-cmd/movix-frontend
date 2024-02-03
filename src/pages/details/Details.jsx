@@ -837,7 +837,7 @@ const Details = () => {
             <span>Posted On: {format(review.createdAt)}</span>
             <div style={{display:"flex",alignItems:"center",gap:"1rem"}}>
 
-            <img style={{height:"30px",width:"30px",borderRadius:"15px"}} src={review?.userId?.displayPicture} alt="df" />
+            <img style={{height:"30px",width:"30px",borderRadius:"15px"}} src={review?.userId?.displayPicture||"https://firebasestorage.googleapis.com/v0/b/screenshare-1c657.appspot.com/o/1706451145400avatar-3814049_1280.jpg?alt=media&token=08fc954a-5fec-48e4-90fe-2a7e125e8b33"} alt="df" />
             <span style={{color:"chocolate",fontWeight:"500"}}>{review?.userId?.username}</span>
             </div>
             {/* <span>{session.username}</span> */}
