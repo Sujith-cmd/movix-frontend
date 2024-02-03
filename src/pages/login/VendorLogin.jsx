@@ -123,22 +123,22 @@ const VendorSignin = () => {
            
               navigate('/profile')
         }
-        // if(response.status==401){
-        //   // dispatch(setCurrentUser(response.data.rest))
-        //   // dispatch(setViewerLogin())
-        //   // dispatch(setToken(response.data.token))
+        if(response.status==401){
+          // dispatch(setCurrentUser(response.data.rest))
+          // dispatch(setViewerLogin())
+          // dispatch(setToken(response.data.token))
         
-        //   // navigate('/')
-        //   toast("access blocked")
+          // navigate('/')
+          toast("access blocked")
 
-        // }
+        }
       
      }).catch((err)=>{
        console.log("logggin errorrr");
        console.log(err);
-       if(err.response.status==401){
-        alert("user is blocked")
-      }
+      //  if(err.response.status==401){
+      //   alert("user is blocked")
+      // }
     
       // alert("user is blocked")
 
