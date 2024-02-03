@@ -79,7 +79,7 @@ const Details = () => {
         if(vendorDat?.timeSlots?.length==0){
           alert("Current theatre doesn't have any available time.Please choose any other")
         }
-        if(vendorDat.isTheatre==true){
+        if(vendorDat?.isTheatre==true){
           setType("theatre")
         }else{
           setType("Game")

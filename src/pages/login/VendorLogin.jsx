@@ -115,16 +115,14 @@ const VendorSignin = () => {
       axiosIn.post("/vendors/signin",formData).then((response) => {
         // console.log("vendor login route");
         console.log(response);
-        if(response.status==401){
-          alert("user is blocked")
-        }else{
+       
 
           dispatch(setCurrentUser(response.data.rest))
               dispatch(setVendorLogin())
               dispatch(setToken(response.data.token))
            
               navigate('/profile')
-        }
+        
       
      }).catch((err)=>{
        console.log("logggin errorrr");
