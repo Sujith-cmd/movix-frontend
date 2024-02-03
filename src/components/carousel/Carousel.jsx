@@ -66,8 +66,8 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                 {!loading ? (
                     <div className="carouselItems" ref={carouselContainer}>
                         {data?.map((item) => {
-                            const posterUrl = item?.displayPicture
-                                ? item?.displayPicture
+                            const posterUrl = item.displayPicture
+                                ? item.displayPicture
                                 : PosterFallback;
                             return (
                                 <div
@@ -82,7 +82,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                                     <div className="posterBlock">
                                         <Img src={posterUrl} />
                                         <CircleRating
-                                            rating={item.rating}
+                                            rating={item.seatingCapacity}
                                         />
                                         <Genres
                                             data={["4K tv","Dolby"]}
@@ -93,7 +93,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                                             {item.username}
                                         </span>
                                         <span className="date">
-                                           Total Seats : {item.seatingCapacity}
+                                           Total Seats : {item?.seatingCapacity||1}
                                         </span>
                                     </div>
                                 </div>
