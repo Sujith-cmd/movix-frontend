@@ -785,7 +785,7 @@ const Details = () => {
                 <span style={{display:"flex",alignItems:"center"}}>
                   <button type="button" style={{color:"black",borderRadius:".99rem",width:"9rem",height:"2rem",marginRight:"1rem",fontWeight:"600",backgroundColor:"orange"}} onClick={walletPay}>Use Wallet</button>
                   <span style={{color:"white",width:"7rem",fontWeight:"600",marginRight:"1rem"}}>Avail. Balance</span>
-                  <span style={{color:"white",gap:"1rem"}}>{currentUser.account_Bal}Rs</span>
+                  <span style={{color:"white",gap:"1rem"}}>{Math.floor(currentUser?.account_Bal)}Rs</span>
                 </span>
                 <button style={{width:"100%",height:"3rem",fontWeight:"600",color:"black",borderRadius:"1rem"}} type="button">{bill+eatBillAmt}{".00Rs"}</button>
                 {/* <input  className="paymentInput" type="text" value={bill} /> */}
