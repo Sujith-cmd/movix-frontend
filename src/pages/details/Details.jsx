@@ -810,10 +810,10 @@ const Details = () => {
          <div style={{height:"100px",display:"flex",gap:"1rem"}}>
           <span style={{fontWeight:"600",color:"white"}}>Rate it</span>
           <span  style={{height:"25px",width:"50px",textAlign:"center",borderRadius:"60%",paddingTop:"5px",fontWeight:"600"}} className={rate==1?'rated':'notRated'} onClick={()=>{setRate(1)}}>1</span>
-          <span  className={rate==2?'rated':'notRated'} style={{height:"25px",width:"50px",textAlign:"center",borderRadius:"60%",paddingTop:"5px",fontWeight:"600"}} onClick={()=>{setRate(2)}}>2</span>
-          <span  className={rate==3?'rated':'notRated'} style={{height:"25px",width:"50px",textAlign:"center",borderRadius:"60%",paddingTop:"5px",fontWeight:"600"}} onClick={()=>{setRate(3)}}>3</span>
-          <span  className={rate==4?'rated':'notRated'} style={{height:"25px",width:"50px",textAlign:"center",borderRadius:"60%",paddingTop:"5px",fontWeight:"600"}} onClick={()=>{setRate(4)}}>4</span>
-          <span  className={rate==5?'rated':'notRated'} style={{height:"25px",width:"50px",textAlign:"center",borderRadius:"60%",paddingTop:"5px",fontWeight:"600"}} onClick={()=>{setRate(5)}}>5</span>
+          <span  className={rate==2?'rated':'notRated'} style={{height:"25px",width:"50px",textAlign:"center",borderRadius:"60%",paddingTop:"5px",fontWeight:"600",cursor:"pointer"}} onClick={()=>{setRate(2)}}>2</span>
+          <span  className={rate==3?'rated':'notRated'} style={{height:"25px",width:"50px",textAlign:"center",borderRadius:"60%",paddingTop:"5px",fontWeight:"600",cursor:"pointer"}} onClick={()=>{setRate(3)}}>3</span>
+          <span  className={rate==4?'rated':'notRated'} style={{height:"25px",width:"50px",textAlign:"center",borderRadius:"60%",paddingTop:"5px",fontWeight:"600",cursor:"pointer"}} onClick={()=>{setRate(4)}}>4</span>
+          <span  className={rate==5?'rated':'notRated'} style={{height:"25px",width:"50px",textAlign:"center",borderRadius:"60%",paddingTop:"5px",fontWeight:"600",cursor:"pointer"}} onClick={()=>{setRate(5)}}>5</span>
           {/* <span style={{height:"25px",width:"50px",textAlign:"center",backgroundColor:"blue"}} onClick={()=>{addReview(1)}}>1</span>
           <span  style={{height:"25px",width:"50px",textAlign:"center",backgroundColor:"blue"}} onClick={addReview(2)}>2</span>
           <span  style={{height:"25px",width:"50px",textAlign:"center",backgroundColor:"blue"}} onClick={addReview(3)}>3</span>
@@ -853,7 +853,7 @@ const Details = () => {
         <div>
           <form style={{marginTop:"1rem",display:"flex",flexDirection:"column",gap:"1rem",alignItems:"center"}}>
             <input style={{width:"60%",height:"40px",paddingLeft:"26%",borderRadius:"20px"}} type="text" value={reviewText} onChange={(e)=>setReviewText(e.target.value)} onClick={()=>chatVisible?"":setChatVisible(!chatVisible)} placeholder="Post a Review"/>
-            <button style={{width:"10%",height:"30px",borderRadius:"15px"}} type="button" onClick={handleReview}>Post Chat</button>
+            <button style={{width:"10%",height:"30px",borderRadius:"15px",cursor:"pointer"}} type="button" onClick={handleReview}>Post Chat</button>
           </form>
         </div>
         </div>
