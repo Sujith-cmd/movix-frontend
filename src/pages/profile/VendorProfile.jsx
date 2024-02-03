@@ -1038,7 +1038,7 @@ useEffect(() => {
           <button type='button' className='facilityButton' onClick={()=> facilityRef.current.click()}>Add Photo</button>
             </div>
           {featurePic && <img className="addFacilityImage" src={featurePic?featurePic:""} alt="Dp"/>}
-          <button type='button' onClick={addFacility} className='facilityButton' style={{backgroundColor:"orange",color:"black",height:"30px",width:"100px",cursor:"pointer"}}>Add facility</button>
+          <button type='button' onClick={addFacility}  style={{backgroundColor:"orange",color:"black",height:"30px",width:"100px",cursor:"pointer"}}>Add facility</button>
           </form>
       </div>
             
@@ -1097,7 +1097,7 @@ useEffect(() => {
           <button type='button' className='facilityButton' onClick={()=> EatableRef.current.click()}>Add Photo</button>
             </div>
           {eatablePic && <img className="addFacilityImage" src={eatablePic?eatablePic:""} alt="Dp"/>}
-          <button type='button' onClick={addEatables} className='facilityButton' style={{backgroundColor:"orange",color:"black",height:"30px",width:"100px",cursor:"pointer"}}>Add Eatables</button>
+          <button type='button' onClick={addEatables}  style={{backgroundColor:"orange",color:"black",height:"30px",width:"100px",cursor:"pointer"}}>Add Eatables</button>
           </form>
       </div>
         
