@@ -547,13 +547,14 @@ const slotSubmit = async (e) => {
   console.log("slotresponse");
   console.log(response);
   dispatch(setCurrentUser(response.data))
-  
+  setSelectedOption(null)
+  dispatch(getBasic())
+  alert("timeslots updated")
+   console.log(selectedOption);
 }).catch((err)=>{
   console.log(err);
+  alert("timeslots can't update.Please try again")
 });
-dispatch(getBasic())
-alert("timeslots updated")
- console.log(selectedOption);
 }
 
 
@@ -612,7 +613,7 @@ useEffect(() => {
     checkSub()
   }
 
-}, [])
+}, [currentUser])
 const checkSub = async () =>{
 if(currentUser?._id!==undefined||null){
 
