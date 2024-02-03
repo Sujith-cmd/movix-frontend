@@ -66,8 +66,8 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                 {!loading ? (
                     <div className="carouselItems" ref={carouselContainer}>
                         {data?.map((item) => {
-                            const posterUrl = item.displayPicture
-                                ? item.displayPicture
+                            const posterUrl = item.thumbnailPic
+                                ? item.thumbnailPic
                                 : PosterFallback;
                             return (
                                 <div
