@@ -139,7 +139,7 @@ const VendorSignin = () => {
        if(err.response.status==401){
         alert("user is blocked")
       }
-       toast("user is blocked")
+    
       // alert("user is blocked")
 
      })
