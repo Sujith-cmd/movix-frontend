@@ -25,7 +25,7 @@ const CombineLogin = () => {
             <p className="single-content-text">Need an extra income?</p>
         
           </div>
-        <Link to={'/vendorSignIn'}> <button className="single-content-button" >Sign In</button></Link>
+        <Link to={'/vendorSignIn'}> <button className="single-content-button" style={{cursor:"pointer"}} >Sign In</button></Link>
           <Img src={"https://cdn.pixabay.com/photo/2016/08/16/08/47/electronics-1597389_1280.jpg"} className="combineLoginPic"/>
         </div>
         {/* <div className="content-block">
