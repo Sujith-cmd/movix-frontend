@@ -659,6 +659,7 @@ const makePayment = async () =>{
     console.log(session);
     dispatch(setCurrentUser(session.updatedUser))
     // dispatch(setCurrentData(session))
+     navigate("/profile")
     if(result.error){
       console.log(result.error);
     }
