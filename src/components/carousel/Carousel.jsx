@@ -82,7 +82,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                                     <div className="posterBlock">
                                         <Img src={posterUrl} />
                                         <CircleRating
-                                            rating={item?.noOfRatings.toFixed(2)}
+                                            rating={item?.noOfRatings.toFixed(1)}
                                         />
                                         <Genres
                                             data={["4K tv","Dolby"]}
