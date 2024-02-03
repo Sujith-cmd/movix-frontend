@@ -418,7 +418,7 @@ const Details = () => {
     return alert(`atleast 1 seat is mandatory`)
 
   }
-  if(seatsNeeded>currentUser?.seatingCapacity){
+  if(seatsNeeded>vendorData?.seatingCapacity){
     return alert(`maximum available seats is ${currentUser?.seatingCapacity}`)
   }
   if(currentUser.Role!==0){
@@ -466,7 +466,7 @@ const Details = () => {
     }else{
 
     
-    if(seatsNeeded>currentUser?.seatingCapacity){
+    if(seatsNeeded>vendorData?.seatingCapacity){
       return alert(`maximum available seats is ${currentUser?.seatingCapacity}`)
     }
     else{
@@ -820,7 +820,7 @@ const Details = () => {
           <span  style={{height:"25px",width:"50px",textAlign:"center",backgroundColor:"blue"}} onClick={addReview(4)}>4</span>
           <span  style={{height:"25px",width:"50px",textAlign:"center",backgroundColor:"blue"}} onClick={addReview(5)}>5</span> */}
          </div>
-          <span ref={chatVisible?scroll2:null} style={{color:"white",fontSize:"20px",fontWeight:"600"}} onClick={()=>setChatVisible(!chatVisible)}>Comments</span>
+          <span ref={chatVisible?scroll2:null} style={{color:"white",fontSize:"20px",fontWeight:"600",cursor:"pointer"}} onClick={()=>setChatVisible(!chatVisible)}>Comments</span>
       {chatVisible && < div className="chat-body">
          {reviews.map((review,index)=>{
           // console.log(review.userId);
