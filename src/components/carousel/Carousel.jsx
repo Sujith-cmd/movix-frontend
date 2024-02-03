@@ -82,7 +82,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                                     <div className="posterBlock">
                                         <Img src={posterUrl} />
                                         <CircleRating
-                                            rating={item.rating}
+                                            rating={item?.rating||0}
                                         />
                                         <Genres
                                             data={["4K tv","Dolby"]}
@@ -90,7 +90,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                                     </div>
                                     <div className="textBlock">
                                         <span className="title">
-                                            {item.username}
+                                            {item?.username}
                                         </span>
                                         <span className="date">
                                            Total Seats : {item?.seatingCapacity||1}
