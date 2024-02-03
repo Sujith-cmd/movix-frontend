@@ -26,7 +26,7 @@ console.log(query);
 
         // Construct a regular expression without the / delimiters
         // var namePattern = new RegExp(query, 'i'); // 'i' for case-insensitive matching
-        const namePattern = new RegExp(`${query}`,'i');
+        const namePattern = new RegExp(`${query}`,'gi');
         const searchData = data.filter(function (vendor) {
             // Use the test method to check if the vendor name matches the regex pattern
             if (namePattern.test(vendor.username)) {
