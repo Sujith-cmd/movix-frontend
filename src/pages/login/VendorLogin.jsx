@@ -114,15 +114,24 @@ const VendorSignin = () => {
     try {
       axiosIn.post("/vendors/signin",formData).then((response) => {
         // console.log("vendor login route");
-        console.log(response);
+        // console.log(response);
        
-
+        if(response.status==200){
           dispatch(setCurrentUser(response.data.rest))
               dispatch(setVendorLogin())
               dispatch(setToken(response.data.token))
            
               navigate('/profile')
+        }
+        if(response.status==401){
+          // dispatch(setCurrentUser(response.data.rest))
+          // dispatch(setViewerLogin())
+          // dispatch(setToken(response.data.token))
         
+          // navigate('/')
+          toast("access blocked")
+
+        }
       
      }).catch((err)=>{
        console.log("logggin errorrr");
