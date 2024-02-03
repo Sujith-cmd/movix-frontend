@@ -463,13 +463,20 @@ const Details = () => {
     if(seatsNeeded<1){
       return alert(`atleast 1 seat is mandatory`)
   
-    }
+    }else{
+
+    
     if(seatsNeeded>currentUser?.seatingCapacity){
       return alert(`maximum available seats is ${currentUser?.seatingCapacity}`)
     }
+    else{
+
+    
     if(currentUser.Role!==0){
       return alert("only users can book theatres/game stations")
-    }
+    }else{
+
+    
     console.log(seatsNeeded);
     console.log(bill);
     console.log(time);
@@ -539,6 +546,9 @@ const Details = () => {
 }else{
   alert("fill the details correctly")
 }
+    }
+}
+    }
   }
 
   const addReview=async()=>{
