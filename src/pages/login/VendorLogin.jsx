@@ -136,9 +136,9 @@ const VendorSignin = () => {
      }).catch((err)=>{
        console.log("logggin errorrr");
        console.log(err);
-      //  if(err.response.status==401){
-      //   alert("user is blocked")
-      // }
+       if(err.response.status==401){
+        alert("user is blocked")
+      }
     
       // alert("user is blocked")
 
