@@ -544,8 +544,8 @@ const slotSubmit = async (e) => {
     selectedOption
     })
 .then((response) => {
-  // dispatch(setCurrentUser(res.data))
-  console.log(response);
+  dispatch(setCurrentUser(response.data))
+  
 }).catch((err)=>{
   console.log(err);
 });
