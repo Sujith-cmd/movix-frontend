@@ -605,19 +605,21 @@ const removeFacility = async (facId,vendId) =>{
 }
 const [validTimes, setValidTimes] = useState([])
 useEffect(() => {
+if(currentUser?._id!==undefined){
 
-const currDate=new Date()
-const targDate=new Date(currentUser.subscription)
-// console.log("date clash");
-// console.log(currDate-targDate);
-if(currDate-targDate>0){
-  setAccess(false)
-  toast("Get Subscription for Listing your Theatre")
-}else{
-  setAccess(true)
+  const currDate=new Date()
+  const targDate=new Date(currentUser.subscription)
+  // console.log("date clash");
+  // console.log(currDate-targDate);
+  if(currDate-targDate>0){
+    setAccess(false)
+    toast("Get Subscription for Listing your Theatre")
+  }else{
+    setAccess(true)
+  }
+  const tS = (currentUser.timeSlots || []).map((i) => String(i)).join(" ");
+  setValidTimes([...tS])
 }
-const tS = (currentUser.timeSlots || []).map((i) => String(i)).join(" ");
-setValidTimes([...tS])
 
 }, [currentUser])
 // useEffect(() => {
