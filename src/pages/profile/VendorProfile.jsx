@@ -605,7 +605,15 @@ const removeFacility = async (facId,vendId) =>{
 }
 const [validTimes, setValidTimes] = useState([])
 useEffect(() => {
-if(currentUser?._id!==undefined){
+  if(currentUser._id!==undefined||null){
+
+    checkSub()
+  }
+
+}, [])
+const checkSub = async () =>{
+if(currentUser?._id!==undefined||null){
+
 
   const currDate=new Date()
   const targDate=new Date(currentUser.subscription)
@@ -621,7 +629,7 @@ if(currentUser?._id!==undefined){
   setValidTimes([...tS])
 }
 
-}, [currentUser])
+}
 
 
 const makePayment = async () =>{
@@ -630,8 +638,7 @@ const makePayment = async () =>{
   const body = {
     subAmt,currentUser
   }
-  console.log("body");
-  console.log(body);
+ 
   const headers = {
     "Content-Type":"application/json"
   }
