@@ -719,7 +719,7 @@ const Details = () => {
             >
 
             <label className="dateLabel" htmlFor="date">pick A date</label>
-            <input min="2024-01-27" className="dateInput" id="date" type="date" onChange={(e)=>{check(e.target.value)}}/>
+            <input min="2024-02-03" className="dateInput" id="date" type="date" onChange={(e)=>{check(e.target.value)}}/>
             {/* <input min={todayDate} className="dateInput" id="date" type="date" onChange={(e)=>{check(e.target.value)}}/> */}
             </div>
             {selectedDate && (
