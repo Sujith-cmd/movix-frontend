@@ -1,8 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useRef, useState } from 'react';
-import { setCurrentUser, signout } from "../../store/homeSlice.js";
+import { setCurrentUser, signout,setBookingDetails } from "../../store/homeSlice.js";
 import { getPrevious,getBasic,getChats } from "../../store/userSlice.js";
 import { useNavigate } from "react-router-dom";
+import BookingsDetails from "../../components/bookingDetails/BookingDetails.jsx"
 
 
 import ContentWrapper from '../../components/contentWrapper/ContentWrapper.jsx';
@@ -19,7 +20,8 @@ import { userAxiosIntercepter } from '../../hooks/userAxios.jsx';
 
 export default function UserProfile() {
     const location=useLocation()
-    
+    const [bookingDet, setBookingDet] = useState(false)
+  const [bookingDetValues, setBookingDetValues] = useState({})
     const [query, setQuery] = useState(null)
     const { currentUser } = useSelector((state) => state.home);
     const [formData, setFormData] = useState({})
@@ -52,11 +54,13 @@ export default function UserProfile() {
     const { previousBookings,basic,chats } = useSelector((state) => state.user);
 
     const navigate=useNavigate()
-    
+    useEffect(() => {
+      dispatch(setBookingDetails({...bookingDetValues}))
+    }, [bookingDetValues])
     useEffect(() => {
         if (image) {
-          console.log("image");
-          console.log(image);
+          // console.log("image");
+          // console.log(image);
           if(image?.name?.endsWith(".jpg")||image?.name?.endsWith(".jpeg")||image?.name?.endsWith(".png")){
 
             handleFileUploadThumb(image)
@@ -291,6 +295,8 @@ export default function UserProfile() {
       }, [sortDate])
       return (   
         <div className='updateMain'>
+                                     {bookingDet?<BookingsDetails setDetails={setBookingDet} setDetailsValue={setBookingDetValues}/>:""}
+
         <h1 className='h1'>Profile</h1>
           <div className='topSection'>
             <div className={basic?'topButtonsNew':'topButtons'} onClick={()=>dispatch(getBasic())}>Basic Details</div>
@@ -416,7 +422,8 @@ export default function UserProfile() {
                 <div className='prevHead'>Theatre name</div>
                 <div className='prevHead'>Booking Slots</div>
                 <div className='prevHead'>Bill</div>
-                <div className='prevHead'>Booking Id</div>
+                <div className='prevHead'>Detail</div>
+               
                 <div className='prevHead'>Cancel</div>
                 {/* <div className='prevHead'>hjj</div> */}
                 
@@ -472,7 +479,8 @@ export default function UserProfile() {
                             <div className='prevValue'>{book.theatreName}</div>
                             <div className='prevValue'>{times}</div>
                             <div className='prevValue'>{book.bill}</div>
-                            <div className='prevValue'>{book.bookingId}</div>
+                            <div className='prevValue'><span>{book.status}</span><span style={{backgroundColor:"gray",marginLeft:"10px",fontSize:"15px",paddingLeft:"5px",paddingRight:"5px"}} onClick={()=>{setBookingDet(true);setBookingDetValues({...book})}}>Details</span></div>
+
                             {/* <div className='prevValue' >status</div> */}
                             {/* <div className='prevValue' >cg v</div> */}
                             {/* <div className='prevValue' >{canc?"Cancel":"No refund"}</div> */}
