@@ -149,19 +149,15 @@ console.log(query);
         // setData(session)
     }else{
         const allG= allGames.filter((game,index)=>{
-            const currDate=new Date()
-            const targDate=new Date(game.subscription)
-            // console.log("date clash");
-            // console.log(currDate-targDate);
-            if(currDate-targDate>0){
+          
                 
                 return game.isAccess=="Allowed"
-            }
+            
                
                 
                 
       })
-            setData(allG)
+            setData(allGames)
 
         }
         
