@@ -112,8 +112,14 @@ console.log(query);
         setLoading(true);
         if(type=="theatre"){
            const allT= allTheatres.filter((theatre,index)=>{
-               
-                   return theatre.isAccess=="Allowed"
+            const currDate=new Date()
+            const targDate=new Date(theatre.subscription)
+            // console.log("date clash");
+            // console.log(currDate-targDate);
+            if(currDate-targDate>0){
+                
+                return theatre.isAccess=="Allowed"
+            }
                
                 
                 
@@ -142,7 +148,20 @@ console.log(query);
         //             console.log(session);
         // setData(session)
     }else{
-            setData(allGames)
+        const allG= allGames.filter((game,index)=>{
+            const currDate=new Date()
+            const targDate=new Date(game.subscription)
+            // console.log("date clash");
+            // console.log(currDate-targDate);
+            if(currDate-targDate>0){
+                
+                return game.isAccess=="Allowed"
+            }
+               
+                
+                
+      })
+            setData(allG)
 
         }
         
