@@ -608,14 +608,14 @@ const removeFacility = async (facId,vendId) =>{
 }
 const [validTimes, setValidTimes] = useState([])
 useEffect(() => {
-  if(currentUser._id!==undefined||null){
+  if(currentUser?._id!==undefined&&currentUser?._id!==null){
 
     checkSub()
   }
 
 }, [currentUser])
 const checkSub = async () =>{
-if(currentUser?._id!==undefined||null){
+if(currentUser?._id!==undefined&&currentUser?._id!==null){
 
 
   const currDate=new Date()
