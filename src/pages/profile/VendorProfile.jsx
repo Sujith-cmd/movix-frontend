@@ -809,7 +809,7 @@ useEffect(() => {
           <div className={chats?'topButtonsNew':'topButtons'} onClick={()=>dispatch(getChats())}>Chats</div>
         </div>
         {!access && <div style={{width:"100%", height:"25vh",backgroundColor:"darkgoldenrod",display:"flex",gap:"2rem",justifyContent:"center",alignItems:"center"}}>
-       <span >.Your subscription is over. Get Subscription for Listing your Theatre</span>
+       <span >.Your subscription is over and your details will be removed from the lists soon. Get Subscription for Listing your Theatre</span>
        <div>
         <form >
           
