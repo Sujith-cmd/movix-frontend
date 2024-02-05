@@ -29,7 +29,7 @@ export default function Profile() {
   const [error,setError]=useState(false)
   const [bookingDet, setBookingDet] = useState(false)
   const [bookingDetValues, setBookingDetValues] = useState({})
-
+  const[toastN,setToastN]=useState(0)
   const [username,setUsername ]=useState(currentUser.username)
   const [thumbnailPic, setThumbnailPic]=useState(currentUser.thumbnailPic)
   const [displayPicture, setDisplayPicture]=useState(currentUser.displayPicture)
@@ -615,6 +615,7 @@ useEffect(() => {
 
 }, [currentUser])
 const checkSub = async () =>{
+  if(toastN==0){
 if(currentUser?._id!==undefined&&currentUser?._id!==null){
 
 
@@ -631,7 +632,8 @@ if(currentUser?._id!==undefined&&currentUser?._id!==null){
   const tS = (currentUser.timeSlots || []).map((i) => String(i)).join(" ");
   setValidTimes([...tS])
 }
-
+ setToastN(1)
+}
 }
 
 
